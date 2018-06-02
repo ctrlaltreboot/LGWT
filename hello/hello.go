@@ -7,8 +7,10 @@ import "fmt"
    or "side-effects"
 */
 
+const helloPrefix = "Hello there, "
+
 func Hello(n string) string {
-	return "Hello there, " + n
+	return helloPrefix + n
 }
 
 func main() {
