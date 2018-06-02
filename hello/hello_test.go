@@ -4,8 +4,8 @@ import "testing"
 
 // *testing.T is our hook into the testing framework...
 func TestHello(t *testing.T) {
-	got := Hello()
-	want := "Hello, World... of... tests..."
+	got := Hello("handsome")
+	want := "Hello there, handsome"
 
 	if got != want {
 		/*

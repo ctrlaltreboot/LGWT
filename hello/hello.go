@@ -7,10 +7,10 @@ import "fmt"
    or "side-effects"
 */
 
-func Hello() string {
-	return "Hello, World... of... tests..."
+func Hello(n string) string {
+	return "Hello there, " + n
 }
 
 func main() {
-	fmt.Println(Hello())
+	fmt.Println(Hello("handsome"))
 }
