@@ -2,21 +2,33 @@ package main
 
 import "fmt"
 
-/*
-	 separation of "domain" code from "outside world"
-   or "side-effects"
-*/
+const englishPrefix = "Hello, "
+const spanishHelloPrefix = "Hola, "
+const frenchHelloPrefix = "Bonjour, "
 
-const helloPrefix = "Hello there, "
-
-func Hello(n string) string {
-	if n == "" {
-		return "Hello, World"
-	} else {
-		return helloPrefix + n
+// domain code
+func Hello(name, language string) string {
+	if name == "" {
+		name = "Beautiful"
 	}
+
+	return greetingPrefix(language) + name
 }
 
+func greetingPrefix(language string) (prefix string) {
+	switch language {
+	case "spanish":
+		prefix = spanishHelloPrefix
+	case "french":
+		prefix = frenchHelloPrefix
+	default:
+		prefix = englishPrefix
+	}
+
+	return
+}
+
+// side-effect
 func main() {
-	fmt.Println(Hello("handsome"))
+	fmt.Println(Hello("", ""))
 }
