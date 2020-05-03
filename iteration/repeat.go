@@ -1,13 +1,13 @@
 package iteration
 
-func Repeat(character string) string {
+func Repeat(character string, reps int) string {
 	var repeated string
-	for i := 0; i < 5; i++ {
+	for i := 0; i < reps; i++ {
 		repeated += character
 	}
 	return repeated
 }
 
 func main() {
-	println(Repeat("a"))
+	println(Repeat("a", 5))
 }
